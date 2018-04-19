@@ -7,10 +7,11 @@ const defaultState = {
   queue: [],
 };
 
-reducers[ACTIONS.NOTIFICATION_CREATED] = (state, action) => {
-  const { title, message, type, errorCode, displayType } = action.data;
+reducers[ACTIONS.CREATE_NOTIFICATION] = (state, action) => {
+  const { title, message, type, errorCode, displayType, id } = action.data;
   const queue = Object.assign([], state.queue);
   queue.push({
+    id,
     title,
     message,
     type,
@@ -23,7 +24,7 @@ reducers[ACTIONS.NOTIFICATION_CREATED] = (state, action) => {
   });
 };
 
-reducers[ACTIONS.NOTIFICATION_DISPLAYED] = state => {
+reducers[ACTIONS.DISMISS_NOTIFICATION] = state => {
   const queue = Object.assign([], state.queue);
   queue.shift();
 

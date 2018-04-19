@@ -8,3 +8,9 @@ export function doNotify(data: Notification) {
     data,
   };
 }
+
+export function doDismissNotification() {
+  return {
+    type: ACTIONS.DISMISS_NOTIFICATION,
+  };
+}

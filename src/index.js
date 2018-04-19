@@ -23,7 +23,7 @@ export {
 } from 'lbryURI';
 
 // actions
-export { doNotify } from 'redux/actions/notifications';
+export { doNotify, doDismissNotification } from 'redux/actions/notifications';
 
 export {
   doFetchClaimListMine,
